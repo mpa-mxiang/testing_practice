@@ -1,4 +1,4 @@
-import { stringLength } from "./functions";
+import { stringLength, capitalize } from "./functions.js";
 test('stringLength should return the correct count', () => {
     expect(stringLength('hello')).toBe(5);
 });
@@ -14,3 +14,7 @@ test('stringLength should throw an error if the string is too long', () => {
 test('stringLength should not throw an error if the string is within the correct length range', () => {
     expect(() => stringLength('hello')).not.toThrow();
 });
+
+test('capitalize function capitalizes the first character of a string', () => {
+    expect(capitalize('hello')).toBe('Hello');
+  });
