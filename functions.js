@@ -1,25 +1,17 @@
-export function stringLength(string) {
-    const count = string.length;
-    if (count === 0) {
-      throw new Error('String must be at least 1 character long');
-    }
-    if (count > 10) {
-      throw new Error('String must not be longer than 10 characters');
-    }
-    return count;
+function stringLength(str) {
+  if (str.length === 0) {
+    throw new Error('String must be at least 1 character long');
+  } else if (str.length > 10) {
+    throw new Error('String must not be longer than 10 characters');
   }
+  return str.length;
+}
 
-  function reverseString(string) {
-    return string.split('').reverse().join('');
-  }
-  
-  // Test case
-  const string = 'hello';
-  const reversedString = reverseString(string);
-  console.log(reversedString); // Output: 'olleh'
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-  function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  
+module.exports = {
+  stringLength,
+  capitalize,
+};
